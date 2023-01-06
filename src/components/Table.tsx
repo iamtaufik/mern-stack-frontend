@@ -8,26 +8,10 @@ interface ProductItem {
   description?: string;
 }
 
-interface Product {
-  product: {
-    name: string;
-    price: string;
-    description?: string;
-  };
-}
-
-interface Props {
-  products: Array<{
-    name: String;
-    price: number;
-    description?: string;
-  }>;
-}
-
 const Table = () => {
   const [products, setProducts] = useState([]);
   const getData = async () => {
-    const result = await axios.get('http://localhost:5000/v1/api/product');
+    const result = await axios.get('https://mern-stack-backend-umber.vercel.app/v1/api/product');
 
     setProducts(result.data.data);
   };

@@ -12,7 +12,7 @@ const CreateProduct = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/v1/api/product', {
+      await axios.post('https://mern-stack-backend-umber.vercel.app/v1/api/product', {
         name: productName,
         price: productPrice,
         description: productDescription,
