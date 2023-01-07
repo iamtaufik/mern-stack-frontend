@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import ButtonLink from './ButtonLink';
+import { ErorNotify, SuccessNotify } from '../features/ToastNotify';
 
 interface ProductItem {
   _id: string;
@@ -15,6 +16,15 @@ const Table = () => {
     const result = await axios.get('https://mern-stack-backend-umber.vercel.app/v1/api/product');
 
     setProducts(result.data.data);
+  };
+
+  const handleDelete = async (id: any) => {
+    try {
+      await axios.delete(`https://mern-stack-backend-umber.vercel.app/v1/api/product/${id}`);
+      SuccessNotify('Product deleted!');
+    } catch (error: any) {
+      ErorNotify(error.message);
+    }
   };
 
   useEffect(() => {
@@ -41,7 +51,9 @@ const Table = () => {
                 <td className="flex gap-4 justify-center">
                   <ButtonLink link={`/detail/${product._id}`} text="Detail" class="btn btn-info" />
                   <ButtonLink link={`/update/${product._id}`} text="Update" class="btn btn-warning" />
-                  <button className="btn btn-error">Delete</button>
+                  <button onClick={() => handleDelete(product._id)} className="btn btn-error">
+                    Delete
+                  </button>
                   {/* <ButtonLink link='/delete' text='Delete'/> */}
                 </td>
               </tr>
