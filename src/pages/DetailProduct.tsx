@@ -11,9 +11,9 @@ const DetailProduct = () => {
   const { id } = useParams();
 
   const getData = async (id: any) => {
+    setLoading(true);
     try {
       const { data } = await axios.get(`https://mern-stack-backend-umber.vercel.app/v1/api/product/${id}`);
-      setLoading(true);
       setProductName(data.data.name);
       setProductPrice(data.data.price);
       setProductDescription(data.data.description);
