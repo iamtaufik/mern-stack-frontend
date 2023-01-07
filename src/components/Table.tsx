@@ -3,6 +3,7 @@ import axios from 'axios';
 import ButtonLink from './ButtonLink';
 
 interface ProductItem {
+  _id: string;
   name: string;
   price: string;
   description?: string;
@@ -20,7 +21,7 @@ const Table = () => {
     getData();
   }, []);
   return (
-    <div className="overflow-x-auto shadow shadow-md mt-4 p-4 border border-zinc-800">
+    <div className="overflow-x-auto shadow-md mt-4 p-4 border border-zinc-800">
       <table className="table table-zebra w-full">
         <thead>
           <tr>
@@ -38,7 +39,7 @@ const Table = () => {
                 <td>{product.name}</td>
                 <td>{product.price}</td>
                 <td className="flex gap-4 justify-center">
-                  <ButtonLink link="/detail" text="Detail" class="btn btn-info" />
+                  <ButtonLink link={`/detail/${product._id}`} text="Detail" class="btn btn-info" />
                   <ButtonLink link="/update" text="Update" class="btn btn-warning" />
                   <button className="btn btn-error">Delete</button>
                   {/* <ButtonLink link='/delete' text='Delete'/> */}

@@ -28,7 +28,7 @@ const CreateProduct = () => {
 
   return (
     <form className="flex justify-center" onSubmit={handleSubmit}>
-      <div className="w-full max-w-md p-4 shadow shadow-md border border-zinc-800 flex justify-center gap-4 items-center flex-col">
+      <div className="w-full max-w-md p-4 shadow-md border border-zinc-800 flex justify-center gap-4 items-center flex-col">
         <div className="form-control w-full max-w-md">
           <label className="label">
             <span className="label-text">Name Product:</span>

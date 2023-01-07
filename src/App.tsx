@@ -31,7 +31,7 @@ function App() {
             }
           />
           <Route
-            path="detail"
+            path="detail/:id"
             element={
               <>
                 <ButtonLink text="Back" link="/" class="btn" />
