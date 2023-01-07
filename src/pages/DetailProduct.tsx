@@ -28,37 +28,37 @@ const DetailProduct = () => {
     getData(id);
   }, []);
 
-  if (loading) {
-    return (
-      <>
-        <h1 className="text-center text-white">Loading</h1>
-      </>
-    );
-  }
-
   return (
-    <form className="flex justify-center">
-      <div className="w-full max-w-md p-4 shadow-md border border-zinc-800 flex justify-center gap-4 items-center flex-col">
-        <div className="form-control w-full max-w-md">
-          <label className="label">
-            <span className="label-text">Name Product:</span>
-          </label>
-          <input placeholder="Type Here" value={productName} className="input input-bordered w-full max-w-md " disabled />
-        </div>
-        <div className="form-control w-full max-w-md">
-          <label className="label">
-            <span className="label-text">Price Product:</span>
-          </label>
-          <input placeholder="Type Here" value={productPrice} className="input input-bordered w-full max-w-md " disabled />
-        </div>
-        <div className="form-control w-full max-w-md">
-          <label className="label">
-            <span className="label-text">Description:</span>
-          </label>
-          <input placeholder="Type Here" value={productDescription} className="input input-bordered w-full max-w-md " disabled />
-        </div>
-      </div>
-    </form>
+    <>
+      {loading ? (
+        <>
+          <h1 className="text-center text-white">Loading</h1>
+        </>
+      ) : (
+        <form className="flex justify-center">
+          <div className="w-full max-w-md p-4 shadow-md border border-zinc-800 flex justify-center gap-4 items-center flex-col">
+            <div className="form-control w-full max-w-md">
+              <label className="label">
+                <span className="label-text">Name Product:</span>
+              </label>
+              <input placeholder="Type Here" value={productName} className="input input-bordered w-full max-w-md " disabled />
+            </div>
+            <div className="form-control w-full max-w-md">
+              <label className="label">
+                <span className="label-text">Price Product:</span>
+              </label>
+              <input placeholder="Type Here" value={productPrice} className="input input-bordered w-full max-w-md " disabled />
+            </div>
+            <div className="form-control w-full max-w-md">
+              <label className="label">
+                <span className="label-text">Description:</span>
+              </label>
+              <input placeholder="Type Here" value={productDescription} className="input input-bordered w-full max-w-md " disabled />
+            </div>
+          </div>
+        </form>
+      )}
+    </>
   );
 };
 
