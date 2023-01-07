@@ -22,6 +22,7 @@ const Table = () => {
     try {
       await axios.delete(`https://mern-stack-backend-umber.vercel.app/v1/api/product/${id}`);
       SuccessNotify('Product deleted!');
+      getData();
     } catch (error: any) {
       ErorNotify(error.message);
     }
