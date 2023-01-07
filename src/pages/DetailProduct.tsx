@@ -11,8 +11,8 @@ const DetailProduct = () => {
   const { id } = useParams();
 
   const getData = async (id: any) => {
+    setLoading(true);
     try {
-      setLoading(true);
       const { data } = await axios.get(`https://mern-stack-backend-umber.vercel.app/v1/api/product/${id}`);
       setProductName(data.data.name);
       setProductPrice(data.data.price);
@@ -31,7 +31,7 @@ const DetailProduct = () => {
     <>
       {loading ? (
         <>
-          <h1 className="text-center text-white">Loading</h1>
+          <h1 className="text-center text-base">Loading</h1>
         </>
       ) : (
         <form className="flex justify-center">
