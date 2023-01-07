@@ -40,7 +40,7 @@ const Table = () => {
                 <td>{product.price}</td>
                 <td className="flex gap-4 justify-center">
                   <ButtonLink link={`/detail/${product._id}`} text="Detail" class="btn btn-info" />
-                  <ButtonLink link="/update" text="Update" class="btn btn-warning" />
+                  <ButtonLink link={`/update/${product._id}`} text="Update" class="btn btn-warning" />
                   <button className="btn btn-error">Delete</button>
                   {/* <ButtonLink link='/delete' text='Delete'/> */}
                 </td>

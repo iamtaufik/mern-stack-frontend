@@ -33,7 +33,7 @@ const UpdateProduct = () => {
         price: productPrice,
         description: productDescription,
       });
-      SuccessNotify('Data succesfully added!');
+      SuccessNotify('Data succesfully updated!');
       navigate('/');
     } catch (error: any) {
       console.log(error.message);
